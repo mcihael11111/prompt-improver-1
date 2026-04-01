@@ -23,7 +23,7 @@ const configs: Record<'development' | 'production', EnvConfig> = {
     WEBSITE_URL: 'https://textcoach.com',
   },
   production: {
-    API_URL: 'https://prompt-improver-eu1y.onrender.com',
+    API_URL: 'https://prompt-improver-1.onrender.com',
     SUPABASE_URL: 'https://yrjxpchquyzqyypixxgu.supabase.co',
     SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlyanhwY2hxdXl6cXl5cGl4eGd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI2Mzk3MzMsImV4cCI6MjA3ODIxNTczM30.PmSmjP2uVEyABRUkoAnTnuDexXfCZ8FBXt4vI1_KWFQ',
     STRIPE_STARTER_CHECKOUT: 'https://buy.stripe.com/8x25kD6uJ4Un1FG1vQgfu00',
