@@ -1,0 +1,90 @@
+/* === Welcome Screen === */
+
+.tc-welcome-container {
+  animation: tc-slideIn 0.3s ease;
+}
+
+.tc-welcome-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--tc-text-dark);
+  margin-bottom: 4px;
+}
+
+.tc-welcome-subtitle {
+  font-size: 13px;
+  color: var(--tc-text-muted);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.tc-conversation-input {
+  width: 100%;
+  min-height: 146px;
+  padding: 12px;
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-sm);
+  font-family: var(--tc-font);
+  font-size: 14px;
+  color: var(--tc-text-dark);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s ease;
+  line-height: 1.5;
+}
+
+.tc-conversation-input::placeholder {
+  color: var(--tc-text-muted);
+}
+
+.tc-conversation-input:focus {
+  border-color: var(--tc-primary-highest);
+  box-shadow: 0 0 0 3px rgba(118, 22, 208, 0.1);
+}
+
+.tc-read-from-chat {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--tc-primary-highest);
+  background: none;
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-pill);
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: var(--tc-font);
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.tc-read-from-chat:hover {
+  background: var(--tc-primary-lowest);
+}
+
+.tc-privacy-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--tc-text-muted);
+}
+
+.tc-privacy-badge svg {
+  width: 14px;
+  height: 14px;
+  color: var(--tc-text-muted);
+  flex-shrink: 0;
+}
+
+.tc-welcome-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tc-welcome-buttons .tc-btn-primary,
+.tc-welcome-buttons .tc-btn-secondary {
+  flex: 1;
+}

@@ -1,0 +1,15 @@
+/* === TextCoach Content Script Styles === */
+/* Main entry point — imports all component CSS */
+
+@import './variables.css';
+@import './animations.css';
+@import './components/button.css';
+@import './components/modal.css';
+@import './components/welcome.css';
+@import './components/question.css';
+@import './components/results.css';
+@import './components/dynamics.css';
+@import './components/loading.css';
+@import './components/error.css';
+@import './components/upgrade.css';
+@import './components/menu.css';

@@ -1,0 +1,19 @@
+{
+  "name": "textcoach",
+  "version": "2.0.0",
+  "private": true,
+  "description": "TextCoach — AI-powered conversation coaching",
+  "scripts": {
+    "dev:backend": "pnpm --filter @textcoach/backend dev",
+    "build:backend": "pnpm --filter @textcoach/backend build",
+    "start:backend": "pnpm --filter @textcoach/backend start",
+    "build:extension": "pnpm --filter @textcoach/chrome-extension build",
+    "dev:extension": "pnpm --filter @textcoach/chrome-extension dev",
+    "build:shared": "pnpm --filter @textcoach/shared build",
+    "test": "pnpm -r test",
+    "test:backend": "pnpm --filter @textcoach/backend test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

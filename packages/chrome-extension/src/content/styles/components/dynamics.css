@@ -1,0 +1,76 @@
+/* === Dynamics Card === */
+
+.tc-dynamics-card {
+  background: var(--tc-primary-lowest);
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-md);
+  padding: 14px;
+  position: relative;
+}
+
+.tc-dynamics-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tc-text-dark);
+  margin-bottom: 10px;
+}
+
+.tc-dynamics-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tc-dynamics-row:last-child {
+  margin-bottom: 0;
+}
+
+.tc-dynamics-label {
+  font-weight: 600;
+  min-width: 65px;
+  color: var(--tc-text-dark);
+  flex-shrink: 0;
+}
+
+.tc-dynamics-value {
+  color: var(--tc-text-light);
+}
+
+/* Blurred state (free tier) */
+.tc-dynamics-card--blurred {
+  filter: blur(4px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.tc-dynamics-blur-wrapper {
+  position: relative;
+}
+
+.tc-dynamics-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--tc-radius-md);
+  z-index: 1;
+}
+
+.tc-dynamics-blur-overlay .tc-btn-small {
+  background: var(--tc-primary-highest);
+  color: white;
+  border: none;
+  border-radius: var(--tc-radius-pill);
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--tc-font);
+}

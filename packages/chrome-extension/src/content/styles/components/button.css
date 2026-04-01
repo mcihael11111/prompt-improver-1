@@ -1,0 +1,134 @@
+/* === Floating Button === */
+
+.tc-floating-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--tc-primary-highest);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2147483646;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(118, 22, 208, 0.3);
+  padding: 0;
+}
+
+.tc-floating-button:hover {
+  background: var(--tc-primary-high);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(118, 22, 208, 0.4);
+}
+
+.tc-floating-button:active {
+  background: var(--tc-primary-medium);
+  transform: scale(0.95);
+}
+
+.tc-floating-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* === Fallback Button (unsupported sites) === */
+
+.tc-fallback-button {
+  position: fixed;
+  right: 0;
+  width: 56px;
+  height: 46px;
+  background: var(--tc-primary-highest);
+  color: white;
+  border: none;
+  border-radius: var(--tc-radius-md) 0 0 var(--tc-radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483646;
+  transition: background-color 0.15s ease, width 0.15s ease;
+  box-shadow: -2px 2px 8px rgba(118, 22, 208, 0.3);
+  user-select: none;
+}
+
+.tc-fallback-button:hover {
+  background: var(--tc-primary-high);
+  width: 62px;
+}
+
+.tc-fallback-button:active {
+  background: var(--tc-primary-medium);
+}
+
+.tc-fallback-button svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* === Generic Buttons === */
+
+.tc-btn-primary {
+  background: var(--tc-primary-highest);
+  color: white;
+  border: none;
+  border-radius: var(--tc-radius-pill);
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--tc-font);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tc-btn-primary:hover {
+  background: #6512b5;
+}
+
+.tc-btn-primary:active {
+  background: #5410a0;
+}
+
+.tc-btn-primary:disabled {
+  background: var(--tc-primary-medium);
+  cursor: not-allowed;
+}
+
+.tc-btn-secondary {
+  background: white;
+  color: var(--tc-primary-highest);
+  border: 1px solid var(--tc-primary-highest);
+  border-radius: var(--tc-radius-pill);
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--tc-font);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tc-btn-secondary:hover {
+  background: var(--tc-primary-lowest);
+}
+
+.tc-btn-secondary:active {
+  background: var(--tc-primary-medium);
+}
+
+.tc-btn-small {
+  padding: 6px 14px;
+  font-size: 12px;
+}

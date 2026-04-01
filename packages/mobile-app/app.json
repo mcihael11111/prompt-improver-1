@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "TextCoach",
+    "slug": "textcoach",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "scheme": "textcoach",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#7616d0"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.textcoach.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "TextCoach needs access to your photos to analyse conversation screenshots."
+      }
+    },
+    "android": {
+      "package": "com.textcoach.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#7616d0"
+      }
+    },
+    "plugins": [
+      "expo-apple-authentication",
+      "expo-image-picker"
+    ]
+  }
+}

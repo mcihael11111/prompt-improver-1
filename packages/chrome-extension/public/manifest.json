@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "TextCoach",
+  "version": "2.0.0",
+  "description": "AI-powered conversation coaching — understand dynamics, text with confidence",
+  "permissions": ["storage", "identity"],
+  "host_permissions": [
+    "https://textcoach-api.onrender.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/*", "images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "128": "images/Icon.png"
+  },
+  "action": {
+    "default_icon": "images/Icon.png",
+    "default_title": "TextCoach",
+    "default_popup": "popup.html"
+  }
+}

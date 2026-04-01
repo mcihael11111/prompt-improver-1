@@ -1,0 +1,136 @@
+/* === Upgrade Plan Screen === */
+
+.tc-upgrade-container {
+  animation: tc-slideIn 0.3s ease;
+}
+
+.tc-upgrade-back {
+  background: none;
+  border: none;
+  color: var(--tc-primary-highest);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--tc-font);
+  padding: 4px 0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tc-upgrade-back:hover {
+  text-decoration: underline;
+}
+
+.tc-upgrade-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--tc-text-dark);
+  margin-bottom: 20px;
+}
+
+.tc-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tc-plan-card {
+  background: var(--tc-primary-lowest);
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tc-plan-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tc-text-dark);
+  margin-bottom: 12px;
+}
+
+.tc-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.tc-features-list li {
+  font-size: 13px;
+  color: var(--tc-text-light);
+  padding: 4px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.tc-features-list li::before {
+  content: '✓';
+  color: var(--tc-primary-highest);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tc-pricing-option {
+  background: white;
+  border-radius: var(--tc-radius-sm);
+  padding: 12px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.tc-price {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--tc-text-dark);
+  display: inline;
+}
+
+.tc-price-period {
+  font-size: 14px;
+  color: var(--tc-text-muted);
+}
+
+.tc-price-cycle {
+  font-size: 12px;
+  color: var(--tc-text-muted);
+  margin-top: 2px;
+}
+
+.tc-save-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--tc-success);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.tc-pricing-option .tc-btn-primary,
+.tc-pricing-option .tc-btn-secondary {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.tc-stripe-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--tc-text-muted);
+}
+
+.tc-stripe-footer img {
+  height: 16px;
+}

@@ -1,0 +1,51 @@
+/* === TextCoach Design Tokens === */
+/* Font-face declarations are injected at runtime in index.tsx */
+
+:host {
+  /* Primary palette */
+  --tc-primary-highest: #7616d0;
+  --tc-primary-high: #a96ee2;
+  --tc-primary-medium: #cba9ee;
+  --tc-primary-lowest: #ede3fa;
+
+  /* Secondary */
+  --tc-secondary-highest: #ffffff;
+  --tc-secondary-high: #fbf7ff;
+
+  /* Text */
+  --tc-text-dark: #1e293b;
+  --tc-text-light: #323232;
+  --tc-text-muted: #94a3b8;
+
+  /* Semantic */
+  --tc-success: #22c55e;
+  --tc-warning: #f59e0b;
+  --tc-error: #ef4444;
+  --tc-info: #3b82f6;
+
+  /* Sizing */
+  --tc-modal-width: 500px;
+  --tc-modal-wide-width: 700px;
+  --tc-radius-sm: 8px;
+  --tc-radius-md: 12px;
+  --tc-radius-lg: 20px;
+  --tc-radius-pill: 24px;
+
+  /* Shadows */
+  --tc-shadow-modal: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  --tc-shadow-dropdown: 0 4px 12px rgba(0,0,0,0.15);
+
+  /* Typography */
+  --tc-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  font-family: var(--tc-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--tc-text-dark);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

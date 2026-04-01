@@ -1,0 +1,55 @@
+/* === Error Screen === */
+
+.tc-error-container {
+  background: white;
+  border: 1px solid var(--tc-error);
+  border-radius: var(--tc-radius-md);
+  padding: 24px;
+  text-align: center;
+  animation: tc-slideIn 0.3s ease;
+}
+
+.tc-error-icon {
+  color: var(--tc-error);
+  margin-bottom: 12px;
+}
+
+.tc-error-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.tc-error-message {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--tc-error);
+  margin-bottom: 8px;
+}
+
+.tc-error-details {
+  font-size: 13px;
+  color: var(--tc-text-muted);
+  margin-bottom: 16px;
+}
+
+/* === No Suggestions Screen === */
+
+.tc-no-suggestions-container {
+  text-align: center;
+  padding: 16px 0;
+  animation: tc-slideIn 0.3s ease;
+}
+
+.tc-no-suggestions-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--tc-text-dark);
+  margin-bottom: 8px;
+}
+
+.tc-no-suggestions-description {
+  font-size: 14px;
+  color: var(--tc-text-muted);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}

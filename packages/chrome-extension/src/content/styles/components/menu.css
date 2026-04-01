@@ -1,0 +1,42 @@
+/* === Menu Dropdown === */
+
+.tc-menu-wrapper {
+  position: relative;
+}
+
+.tc-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 200px;
+  background: white;
+  border: 1px solid var(--tc-primary-highest);
+  border-radius: var(--tc-radius-md);
+  box-shadow: var(--tc-shadow-dropdown);
+  z-index: 10;
+  padding: 4px;
+  animation: tc-slideIn 0.2s ease;
+}
+
+.tc-menu-item {
+  padding: 10px 16px;
+  border-radius: var(--tc-radius-pill);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--tc-font);
+  color: var(--tc-text-dark);
+  transition: background-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tc-menu-item:hover {
+  background: var(--tc-primary-lowest);
+}
+
+.tc-menu-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--tc-text-muted);
+}

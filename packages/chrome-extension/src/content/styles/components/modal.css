@@ -1,0 +1,138 @@
+/* === Modal === */
+
+.tc-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: tc-fadeIn 0.2s ease;
+}
+
+.tc-modal {
+  width: var(--tc-modal-width);
+  max-height: 80vh;
+  background: var(--tc-secondary-highest);
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-lg);
+  box-shadow: var(--tc-shadow-modal);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: tc-slideIn 0.3s ease;
+}
+
+.tc-modal--wide {
+  width: var(--tc-modal-wide-width);
+}
+
+/* Header */
+.tc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--tc-primary-lowest);
+  flex-shrink: 0;
+}
+
+.tc-modal-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tc-modal-logo-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--tc-primary-highest);
+}
+
+.tc-modal-logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tc-primary-highest);
+}
+
+.tc-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tc-modal-icon-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: var(--tc-radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tc-text-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tc-modal-icon-btn:hover {
+  background: var(--tc-primary-lowest);
+  color: var(--tc-primary-highest);
+}
+
+/* Content */
+.tc-modal-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  max-height: calc(80vh - 130px);
+}
+
+.tc-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tc-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tc-modal-content::-webkit-scrollbar-thumb {
+  background: var(--tc-primary-medium);
+  border-radius: 3px;
+}
+
+/* Footer */
+.tc-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--tc-primary-lowest);
+  flex-shrink: 0;
+}
+
+.tc-prompts-remaining {
+  font-size: 12px;
+  color: var(--tc-text-muted);
+}
+
+.tc-unlock-btn {
+  font-size: 12px;
+  color: var(--tc-primary-highest);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--tc-font);
+  padding: 4px 8px;
+  border-radius: var(--tc-radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.tc-unlock-btn:hover {
+  background: var(--tc-primary-lowest);
+}

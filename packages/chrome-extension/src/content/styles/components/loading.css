@@ -1,0 +1,55 @@
+/* === Loading Screen === */
+
+.tc-loading-container {
+  padding: 8px 0;
+  animation: tc-fadeIn 0.3s ease;
+}
+
+.tc-skeleton-card {
+  border: 1px solid var(--tc-primary-medium);
+  border-radius: var(--tc-radius-md);
+  padding: 14px;
+  margin-bottom: 12px;
+  background: white;
+}
+
+.tc-skeleton-line {
+  height: 14px;
+  background: linear-gradient(90deg, var(--tc-primary-lowest) 25%, #f0e6fa 50%, var(--tc-primary-lowest) 75%);
+  background-size: 200% 100%;
+  animation: tc-shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.tc-skeleton-line--short { width: 40%; }
+.tc-skeleton-line--medium { width: 70%; }
+.tc-skeleton-line--long { width: 90%; }
+.tc-skeleton-line--full { width: 100%; }
+
+.tc-skeleton-block {
+  height: 60px;
+  background: linear-gradient(90deg, var(--tc-primary-lowest) 25%, #f0e6fa 50%, var(--tc-primary-lowest) 75%);
+  background-size: 200% 100%;
+  animation: tc-shimmer 1.5s infinite;
+  border-radius: var(--tc-radius-sm);
+  margin-bottom: 8px;
+}
+
+.tc-skeleton-badge {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  background: linear-gradient(90deg, var(--tc-primary-lowest) 25%, #f0e6fa 50%, var(--tc-primary-lowest) 75%);
+  background-size: 200% 100%;
+  animation: tc-shimmer 1.5s infinite;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.tc-skeleton-dynamics {
+  background: var(--tc-primary-lowest);
+  border-radius: var(--tc-radius-md);
+  padding: 14px;
+  margin-bottom: 12px;
+}
