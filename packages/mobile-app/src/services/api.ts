@@ -1,4 +1,4 @@
-const API_URL = 'https://textcoach-api.onrender.com';
+const API_URL = 'https://prompt-improver-eu1y.onrender.com';
 
 class ApiError extends Error {
   constructor(public status: number, message: string) {

@@ -5,7 +5,7 @@
   "description": "AI-powered conversation coaching — understand dynamics, text with confidence",
   "permissions": ["storage", "identity"],
   "host_permissions": [
-    "https://textcoach-api.onrender.com/*"
+    "https://prompt-improver-eu1y.onrender.com/*"
   ],
   "background": {
     "service_worker": "background.js",
