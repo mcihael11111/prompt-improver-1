@@ -2,6 +2,7 @@
   "name": "textcoach",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "description": "TextCoach — AI-powered conversation coaching",
   "scripts": {
     "dev:backend": "pnpm --filter @textcoach/backend dev",
