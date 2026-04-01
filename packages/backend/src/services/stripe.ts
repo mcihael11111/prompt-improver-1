@@ -1,7 +1,10 @@
 import Stripe from 'stripe';
 import { env } from '../config/env.js';
 
-export const stripe = new Stripe(env.STRIPE_SECRET_KEY);
+// Stripe is optional — only initialized if STRIPE_SECRET_KEY is set
+export const stripe = env.STRIPE_SECRET_KEY
+  ? new Stripe(env.STRIPE_SECRET_KEY)
+  : null;
 
 export function getPlanFromPriceId(priceId: string): 'free' | 'starter' | 'pro' {
   const proPriceIds = [
@@ -15,5 +18,5 @@ export function getPlanFromPriceId(priceId: string): 'free' | 'starter' | 'pro' 
 
   if (proPriceIds.includes(priceId)) return 'pro';
   if (starterPriceIds.includes(priceId)) return 'starter';
-  return 'pro'; // default fallback
+  return 'pro';
 }

@@ -8,6 +8,10 @@ import { env } from '../config/env.js';
 const router = Router();
 
 router.post('/', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
+  if (!stripe) {
+    return res.status(503).json({ error: 'Stripe not configured' });
+  }
+
   const sig = req.headers['stripe-signature'] as string;
   let event;
 
