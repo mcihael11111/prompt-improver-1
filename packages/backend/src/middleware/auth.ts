@@ -49,8 +49,8 @@ export function checkUserAccess(shouldCheckLimit = false): (req: Request, res: R
           .insert({ user_id: userId, plan_name: 'free' });
 
         if (insertError) {
-          console.error('Failed to create user subscription:', insertError.message);
-          res.status(500).json({ error: 'Failed to create user account' });
+          console.error('Failed to create user subscription:', insertError.message, insertError.details, insertError.hint);
+          res.status(500).json({ error: 'Failed to create user account', details: insertError.message });
           return;
         }
 
