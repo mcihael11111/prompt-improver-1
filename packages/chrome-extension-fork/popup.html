@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prompt GPT</title>
+	<style>
+		@font-face {
+			font-family: 'Poppins';
+			src: url('fonts/Poppins-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Poppins';
+			src: url('fonts/Poppins-Medium.woff2') format('woff2');
+			font-weight: 500;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'Poppins';
+			src: url('fonts/Poppins-SemiBold.woff2') format('woff2');
+			font-weight: 600;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Poppins", sans-serif !important;
+		}
+
+		body {
+			padding: 16px;
+			background: white;
+			color: #1e293b;
+		}
+
+		.menu-header {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			padding: 10px 0px;
+			margin-bottom: 12px;
+			font-size: 16px;
+			font-weight: 500;
+			color: #7616d0;
+			user-select: none;
+		}
+
+		.menu-header svg {
+			width: 24px;
+			height: 24px;
+			flex-shrink: 0;
+		}
+
+		.menu-item {
+			width: 100%;
+			padding: 10px 16px;
+			margin-bottom: 12px;
+			text-align: left;
+			font-size: 16px;
+			line-height: normal;
+			font-weight: 500;
+			color: #7616d0;
+			white-space: nowrap;
+			border-radius: 24px;
+			transition: background-color 0.15s ease;
+			user-select: none;
+			cursor: pointer;
+			border: none;
+			background: none;
+		}
+
+		.menu-item:hover {
+			background-color: #ede3fa;
+		}
+
+		.menu-item:active {
+			background-color: #cba9ee;
+		}
+
+		.menu-item:last-child {
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="popup-root"></div>
+	<script type="module" src="popup.js"></script>
+</body>
+</html>

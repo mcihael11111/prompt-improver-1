@@ -3,65 +3,118 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp"
-    android:background="@android:color/white">
+    android:background="#FFFFFF"
+    android:padding="4dp">
 
-    <!-- Input Container (hidden by default) -->
+    <!-- Input container -->
     <LinearLayout
-        android:id="@+id/input_container"
+        android:id="@+id/inputContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:orientation="horizontal"
         android:visibility="gone"
-        android:layout_marginBottom="4dp">
+        android:paddingHorizontal="8dp"
+        android:gravity="center_vertical">
 
         <EditText
-            android:id="@+id/paste_field"
+            android:id="@+id/pasteField"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="36dp"
             android:layout_weight="1"
             android:hint="Paste conversation..."
             android:textSize="14sp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:background="@android:drawable/edit_text" />
+            android:background="@android:drawable/edit_text"
+            android:paddingHorizontal="8dp"
+            android:singleLine="true"
+            android:importantForAutofill="no"
+            android:contentDescription="Paste conversation text here" />
 
         <Button
-            android:id="@+id/suggest_button"
-            android:layout_width="80dp"
-            android:layout_height="36dp"
-            android:text="Suggest"
+            android:id="@+id/readContextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Read"
             android:textSize="12sp"
-            android:layout_marginStart="8dp" />
+            android:layout_marginStart="4dp"
+            android:contentDescription="Read text from current field" />
+
+        <Button
+            android:id="@+id/suggestBtn"
+            android:layout_width="80dp"
+            android:layout_height="32dp"
+            android:text="Suggest"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="Get text suggestions" />
 
         <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:id="@+id/progressBar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:visibility="gone"
-            android:layout_marginStart="8dp" />
+            android:layout_marginStart="4dp" />
     </LinearLayout>
 
-    <!-- Suggestion Bar -->
+    <!-- Error container -->
     <LinearLayout
-        android:id="@+id/suggestion_bar"
+        android:id="@+id/errorContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#EF4444"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/retryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="Retry"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Suggestion bar -->
+    <HorizontalScrollView
+        android:id="@+id/suggestionScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/suggestionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp" />
+    </HorizontalScrollView>
+
+    <!-- Toggle row -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:orientation="horizontal"
-        android:visibility="gone"
-        android:layout_marginBottom="4dp" />
-
-    <!-- Toggle Button Row -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:paddingHorizontal="8dp"
+        android:gravity="center_vertical">
 
         <Button
-            android:id="@+id/toggle_button"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:id="@+id/toggleBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:text="TC"
-            android:textSize="10sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:contentDescription="Toggle TextCoach input" />
     </LinearLayout>
 </LinearLayout>

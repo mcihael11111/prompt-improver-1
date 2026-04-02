@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { colors, typography, spacing, radii } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { useApi } from '../hooks/useApi';
@@ -29,7 +30,7 @@ export function HomeScreen({ navigation }: any) {
     try {
       const result = await startCoach(conversationText);
       handleCoachStart(result);
-      navigation.navigate('Coach', { conversationId: result.conversationId, firstQuestion: result.content, conversationText });
+      navigation.navigate('Coach', { conversationId: result.conversationId, firstQuestion: { question: result.question, questionType: result.questionType, options: result.options, minTitle: result.minTitle, maxTitle: result.maxTitle, minSubtitle: result.minSubtitle, maxSubtitle: result.maxSubtitle, min: result.min, max: result.max, unit: result.unit }, conversationText });
     } catch (e) {
       // Error handled by useApi
     }
@@ -37,6 +38,11 @@ export function HomeScreen({ navigation }: any) {
 
   async function handleScreenshot() {
     const text = await pickAndExtract();
+    if (text) setConversationText(text);
+  }
+
+  async function handlePasteFromClipboard() {
+    const text = await Clipboard.getStringAsync();
     if (text) setConversationText(text);
   }
 
@@ -59,6 +65,10 @@ export function HomeScreen({ navigation }: any) {
         <Text style={styles.screenshotText}>
           {processing ? 'Processing...' : '📸 Use screenshot'}
         </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.screenshotBtn} onPress={handlePasteFromClipboard}>
+        <Text style={styles.screenshotText}>📋 Paste from clipboard</Text>
       </TouchableOpacity>
 
       <PrivacyBadge />

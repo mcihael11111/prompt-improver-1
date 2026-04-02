@@ -18,9 +18,16 @@ export function CoachScreen({ route, navigation }: any) {
     if (answer === null || answer === undefined) return;
     try {
       const result = await submitAnswer(conversationId, answer);
-      if (result.type === 'suggestions') {
+      if (result.done === true && result.suggestions) {
+        navigation.replace('Results', { results: { dynamics: result.dynamics, suggestions: result.suggestions }, conversationText });
+      } else if (result.question) {
+        setCurrentQuestion({ question: result.question, questionType: result.questionType, options: result.options, minTitle: result.minTitle, maxTitle: result.maxTitle, minSubtitle: result.minSubtitle, maxSubtitle: result.maxSubtitle, min: result.min, max: result.max, unit: result.unit });
+        setQuestionNumber((n: number) => n + 1);
+        setAnswer(null);
+      } else if (result.type === 'suggestions') {
+        // Fallback: wrapped format
         navigation.replace('Results', { results: result.content, conversationText });
-      } else {
+      } else if (result.content) {
         setCurrentQuestion(result.content);
         setQuestionNumber((n: number) => n + 1);
         setAnswer(null);
@@ -35,7 +42,11 @@ export function CoachScreen({ route, navigation }: any) {
     }
     try {
       const result = await undoAnswer(conversationId);
-      if (result?.content) {
+      if (result?.question) {
+        setCurrentQuestion({ question: result.question, questionType: result.questionType, options: result.options, minTitle: result.minTitle, maxTitle: result.maxTitle, minSubtitle: result.minSubtitle, maxSubtitle: result.maxSubtitle, min: result.min, max: result.max, unit: result.unit });
+        setQuestionNumber((n: number) => Math.max(1, n - 1));
+        setAnswer(null);
+      } else if (result?.content) {
         setCurrentQuestion(result.content);
         setQuestionNumber((n: number) => Math.max(1, n - 1));
         setAnswer(null);
@@ -45,7 +56,7 @@ export function CoachScreen({ route, navigation }: any) {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.progress}>Question {questionNumber} of 5</Text>
+      <Text style={styles.progress}>Question {questionNumber}</Text>
       <Text style={styles.questionText}>{currentQuestion?.question}</Text>
 
       <QuestionCard

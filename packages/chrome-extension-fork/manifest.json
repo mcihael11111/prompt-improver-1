@@ -1,0 +1,50 @@
+{
+	"manifest_version": 3,
+	"name": "TextCoach",
+	"version": "2.0.0",
+	"description": "AI-powered conversation coaching",
+	"permissions": [
+		"storage",
+		"identity"
+	],
+	"host_permissions": [
+		"https://prompt-improver-1.onrender.com/*"
+	],
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"contentScript.js"
+			],
+			"run_at": "document_end",
+			"all_frames": false
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"content.css",
+				"fonts/*.woff2",
+				"images/*"
+			],
+			"matches": [
+				"<all_urls>"
+			]
+		}
+	],
+	"icons": {
+		"128": "images/Icon.png"
+	},
+	"action": {
+		"default_icon": "images/Icon.png",
+		"default_title": "TextCoach",
+		"default_popup": "popup.html"
+	},
+	"key": "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDNwVXOkVu0tPvejgcbsCYbqBjseznUpxnvCR2S1iq/QjhfyMWmV3Lbcq0mU7+IWpdG3gpsMBIetvgvHgWAX9CLtPUWuRU1dzkp03AmaDuGRoFX5t9Kue8xLWUzH8vd4QFWqCmplA6AIrOH9e5Ue6ty+cy5ux6jugmuudTSDFUovRrf7ffT6A56VQpCAF2cNgFffQwRh+oAHMwggvPsjK2VrhDm7OkCr6Me+HZwOcrO9fdqT6+MTGVDugrUQqKCgXblHwfxluRFUyudhqn0N6U85QwKMz4JlCn5gdY3goDSSXMdko3hi1DmbC5Nq2l7sSG7FMBgxMaIIMMs5kBzHmH7AgMBAAECggEAAjo9GRLmyMKK1YJ5Hjoed38u4eSFoEE83SMeoFfUN6TaYmMUjLP2qNyJdlhCwxGkAJ7nwvsUPyPg9PWgvp6K7fBEFP5k9eK4CjVhSfEn79C0lsSHl1IC/mfM6CxIczr73jnM1aqmK4n0opyte1mpZgHBTyNw9fnOIAef/7Qled7pQmNQJ7DQw2M/9111uCmNmajmimyniaE9dAcBCqLu+k+j79dbqILS3ZqK7sXRyesSlXlGwMwkvd7eok/EHiz+5KsARVDEoXVcWV16xqGa9GrBZ3fcZo9Nbd15d8rL6h6wuYiLNhZohqlqRUILC62yWFU286ni7rUbfFt1pG2nYQKBgQDsQt3D3NlttpLVZ08nbNt4G2DiMC78dsjDmC3gFfo6gYXP0mtMfjmFoFqhTFqgDx1044Y5soqvnQNwEhk0sLCXm8Zqr9JTXsTgrF+nAiYWoZvIli+WMpBu5aPKli1C9iQX9PA0wk4+r7ZHAQL7HXTEiv0jeLvUvVrdABunmLZSoQKBgQDe8gJ59licuO3rBo7nTWIy9DBMCmj/eYhSZ1U7qGV8jVlqlKullcmCMFoqikC+9ahXCAKRbTAbCS0ho4dEWLh9/LXoX4VxP1Hs3hdD2kwoqufoRBw9EQhs5nBqyjC5eFeQ1v4WgPoZOXAcGMR3IM81To9NNatHF26xJcZypZ7LGwKBgBOCohWek0YAIbgFw/+ZebY9bI7BM+AdXw7n7kHnDrbuI0K6OaojclSanWFckM9O8DvK3ja9i75c1P/YPsSfIrYiYwxEYLYJyXBUS8Ha55JO3jJ+VIeuvUarKA9+v1YcRXbE/2Eb+qIqmH7ckoZyNEZWw/i966TxziMZ8y6v6b6BAoGALYpL3TPn9+OCne6SBEd3Vqcwsmex+PWPVh3LeEs2p9GLwUyrH0DQj6pm0Ke7AAbYIyb8t04RdIRUVrm7qMdisEGNuvDAJljj2DmpkO+nfOskQfqftg2jpfMQZY/1kf02Dd0Mu/YOoFZuQx8ACsGF8gKhHQloejYcI01vEv4nyJ8CgYBk+Tps4i6dlvjS0jHox0dTOQnXOC96eZK3uN8WviyD/3CbCAAqH2rnFB8hmqsQtipS7HYP2iezlJVHzYE1RzmdV84GK48oR+5gnlzKjyMTF4goNoRM48MNdMFzg0PjQYCQUp/wSufFzFeX9OdvfpO56Rh57yUtYIlfplLsVXxtdA=="
+}

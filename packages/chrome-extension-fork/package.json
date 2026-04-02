@@ -1,0 +1,25 @@
+{
+  "name": "prompt-gpt-chrome-extension",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "node update-manifest.js development && cross-env VITE_ENV=development vite build --config vite.background.config.ts && cross-env VITE_ENV=development vite build --config vite.contentScript.config.ts && cross-env VITE_ENV=development vite build --config vite.popup.config.ts && node copy-static-files.js",
+    "build:prod": "node update-manifest.js production && cross-env VITE_ENV=production vite build --config vite.background.config.ts && cross-env VITE_ENV=production vite build --config vite.contentScript.config.ts && cross-env VITE_ENV=production vite build --config vite.popup.config.ts && node copy-static-files.js",
+    "build:store": "node update-manifest.js production && cross-env VITE_ENV=production vite build --config vite.background.config.ts && cross-env VITE_ENV=production vite build --config vite.contentScript.config.ts && cross-env VITE_ENV=production vite build --config vite.popup.config.ts && node copy-static-files.js && node remove-manifest-key.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react-dom": "^19.1.1",
+    "react": "^19.1.1",
+    "@supabase/supabase-js": "^2.75.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
