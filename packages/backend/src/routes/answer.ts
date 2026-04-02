@@ -65,10 +65,27 @@ router.post('/', aiLimiter, async (req, res) => {
       await updateConversation(conversationId, conv);
     }
 
-    res.json({
-      ...parsed,
-      remaining,
-    });
+    // Unwrap nested content to match extension's expected shape
+    const isDone = parsed.type === 'suggestions';
+    if (parsed.type === 'question') {
+      res.json({
+        conversationId,
+        done: false,
+        question: parsed.content.question,
+        questionType: parsed.content.questionType,
+        options: parsed.content.options,
+        ...parsed.content,
+        remaining,
+      });
+    } else {
+      res.json({
+        conversationId,
+        done: true,
+        suggestions: parsed.content.suggestions,
+        dynamics: parsed.content.dynamics,
+        remaining,
+      });
+    }
   } catch (err: any) {
     console.error('Error /answer:', err);
     res.status(500).json({ error: err.message });

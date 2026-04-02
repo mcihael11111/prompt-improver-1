@@ -34,10 +34,25 @@ router.post('/', aiLimiter, checkUserAccess(true), async (req, res) => {
       platform,
     });
 
-    res.json({
-      conversationId,
-      ...parsed,
-    });
+    // Unwrap nested content to match extension's expected shape
+    if (parsed.type === 'question') {
+      res.json({
+        conversationId,
+        question: parsed.content.question,
+        questionType: parsed.content.questionType,
+        options: parsed.content.options,
+        ...parsed.content, // spread any other fields (minTitle, maxTitle, etc.)
+        done: false,
+      });
+    } else {
+      // Shouldn't happen on first call, but handle it
+      res.json({
+        conversationId,
+        done: true,
+        suggestions: parsed.content.suggestions,
+        dynamics: parsed.content.dynamics,
+      });
+    }
   } catch (err: any) {
     console.error('Error /coach:', err);
     res.status(500).json({ error: err.message });

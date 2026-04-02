@@ -10,8 +10,9 @@ export type MessageAction =
   | 'getConfig';
 
 export interface ExtensionMessage {
-  action: MessageAction;
-  payload?: Record<string, unknown>;
+  action?: MessageAction;
+  type?: MessageAction;
+  [key: string]: unknown;
 }
 
 /**
@@ -38,7 +39,8 @@ export function registerMessageHandler(): void {
 }
 
 async function handleMessage(message: ExtensionMessage): Promise<unknown> {
-  switch (message.action) {
+  const action = message.action || message.type;
+  switch (action) {
     case 'signIn': {
       const session = await signIn();
       return { success: true, session };
@@ -60,7 +62,7 @@ async function handleMessage(message: ExtensionMessage): Promise<unknown> {
     }
 
     case 'openTab': {
-      const url = (message.payload?.url as string) ?? '';
+      const url = (message.url as string) ?? '';
       if (url) {
         await chrome.tabs.create({ url });
       }
@@ -68,7 +70,7 @@ async function handleMessage(message: ExtensionMessage): Promise<unknown> {
     }
 
     case 'getConfig': {
-      return { config };
+      return { apiUrl: config.API_URL };
     }
 
     default:
