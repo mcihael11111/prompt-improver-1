@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Clipboard from 'expo-clipboard';
 import { colors, typography, spacing, radii } from '../theme';
 import { DynamicsCard } from '../components/DynamicsCard';
@@ -19,6 +20,7 @@ export function ResultsScreen({ route, navigation }: any) {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <DynamicsCard dynamics={dynamics} />
 
@@ -43,6 +45,7 @@ export function ResultsScreen({ route, navigation }: any) {
         </TouchableOpacity>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
 

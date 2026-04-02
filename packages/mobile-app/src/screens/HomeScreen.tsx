@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Clipboard from 'expo-clipboard';
+import * as Haptics from 'expo-haptics';
 import { colors, typography, spacing, radii } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { useApi } from '../hooks/useApi';
@@ -17,6 +19,7 @@ export function HomeScreen({ navigation }: any) {
 
   async function handleQuickSuggest() {
     if (!conversationText.trim()) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     try {
       const result = await quickSuggest(conversationText);
       navigation.navigate('Results', { results: result, conversationText });
@@ -27,6 +30,7 @@ export function HomeScreen({ navigation }: any) {
 
   async function handleCoachMe() {
     if (!conversationText.trim()) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     try {
       const result = await startCoach(conversationText);
       handleCoachStart(result);
@@ -47,6 +51,7 @@ export function HomeScreen({ navigation }: any) {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
     <ScrollView style={styles.container} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
       <Text style={styles.title}>What did they say?</Text>
       <Text style={styles.subtitle}>Paste the conversation or take a screenshot</Text>
@@ -92,6 +97,7 @@ export function HomeScreen({ navigation }: any) {
         </TouchableOpacity>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
 

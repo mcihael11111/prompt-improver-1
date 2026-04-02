@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, typography, spacing, radii } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { useApi } from '../hooks/useApi';
@@ -55,6 +56,7 @@ export function CoachScreen({ route, navigation }: any) {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.progress}>Question {questionNumber}</Text>
       <Text style={styles.questionText}>{currentQuestion?.question}</Text>
@@ -78,6 +80,7 @@ export function CoachScreen({ route, navigation }: any) {
         </TouchableOpacity>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
 

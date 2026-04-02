@@ -15,7 +15,7 @@ const SettingsStack = createNativeStackNavigator();
 
 function HomeStackScreen() {
   return (
-    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+    <HomeStack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
       <HomeStack.Screen name="HomeMain" component={HomeScreen} />
       <HomeStack.Screen name="Coach" component={CoachScreen} />
       <HomeStack.Screen name="Results" component={ResultsScreen} />
@@ -25,7 +25,7 @@ function HomeStackScreen() {
 
 function SettingsStackScreen({ onSignOut }: { onSignOut: () => void }) {
   return (
-    <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
+    <SettingsStack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
       <SettingsStack.Screen name="SettingsMain">
         {(props) => <SettingsScreen {...props} onSignOut={onSignOut} />}
       </SettingsStack.Screen>

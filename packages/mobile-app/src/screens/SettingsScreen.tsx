@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, typography, spacing, radii } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { getPlan } from '../services/api';
@@ -24,6 +25,7 @@ export function SettingsScreen({ navigation, onSignOut }: Props & { navigation?:
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
     <View style={styles.container}>
       <Text style={styles.title}>Settings</Text>
 
@@ -50,6 +52,7 @@ export function SettingsScreen({ navigation, onSignOut }: Props & { navigation?:
 
       <Text style={styles.version}>TextCoach v2.0.0</Text>
     </View>
+    </SafeAreaView>
   );
 }
 

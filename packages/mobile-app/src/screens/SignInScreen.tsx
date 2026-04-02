@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import * as AuthSession from 'expo-auth-session';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import { colors, typography, spacing, radii } from '../theme';
@@ -84,6 +85,7 @@ export function SignInScreen({ onSignIn }: Props & { navigation?: any }) {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
     <View style={styles.container}>
       <Text style={styles.logo}>TextCoach</Text>
       <Text style={styles.subtitle}>Sign in to start coaching</Text>
@@ -130,6 +132,7 @@ export function SignInScreen({ onSignIn }: Props & { navigation?: any }) {
         <Text style={styles.emailButtonText}>{loading ? 'Signing in...' : 'Sign In'}</Text>
       </TouchableOpacity>
     </View>
+    </SafeAreaView>
   );
 }
 
